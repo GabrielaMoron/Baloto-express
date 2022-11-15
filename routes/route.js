@@ -22,7 +22,7 @@ res.writeHead(200,{'Content-type':'text-html'});*/
 
 router.get('/juego', (req, res) => {
 
-    res.render('juego.')
+    res.render('juego')
   
 })
 
