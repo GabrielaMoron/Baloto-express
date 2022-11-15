@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="juego.css">
+    <!-- Font Google -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <title>Carisellazo</title>
+</head>
+<body>
+    <div class="bannerg text-center">
+        <div class="bannerg-overlay">
+          <%- include('../template/titulo'); %>
+      </div>
+      <section class="modal ">
+        <div class="modal__container">
+            
+            <h2 class="modal__title">REGLAS </h2>
+            <div class="apuesta" id="apuesta">
+                <li>Tienes que realizar una apuesta para poder lanzar</li>
+                <li>Asegurate de escoger tu lado ganador</li>
+                <li>El juego no seguirá si ya no tienes presupuesto</li>
+                <li>Cada que ganes lograras el doble en un incremento en tu apuesta</li>
+
+              </div>  
+                <button  class="modal__close"   >
+                  <a> JUGAR</a> 
+                 </button>
+        </div>
+    </section>
+    </div>
+    <script src="regla.js"></script>
+</body>
+</html>

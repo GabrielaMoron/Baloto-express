@@ -1,0 +1,84 @@
+
+<html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Carisellazo</title>
+      <!--Google Fonts-->
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+      <!--estilos-->
+      <link rel="stylesheet" href="sweetalert2.min.css">
+      <link rel="stylesheet" href="juego.css">
+      
+    
+</head>
+<body>
+
+    <!--contenido-->
+
+  <div class="container">
+      <span class="moneda100-form-title">
+       <a id="reinicio-button"   href="index.html">FINALIZAR</a>  
+          CARISELLAZO
+        
+          </span>
+      <div class="moneda" id="moneda">
+          <div class="cara">
+              <img src="cara.png">
+          </div>
+          <div class="sello">
+              <img src="sello.png">
+          </div>
+      </div>
+      <!--contadores-->
+     
+
+      <!--eleccion-->
+    
+      
+
+          
+      <div class="buttons">
+          <button class="hero__cta">
+             APOSTAR
+          </button>
+          <button id="jugar" >
+              LANZAR
+           </button>
+          
+          
+      </div>
+      
+  <div class="stats">
+      <p id="cara-count">cara: 0</p>
+      <p id="sello-count">sello: 0</p>
+  </div>
+  <div class="stats">
+     <p id="cant-count">jugadas: 0</p>
+     <p id="dinero-count">dinero: 0</p>
+ </div>
+
+  </div>
+  
+  <section class="modal ">
+      <div class="modal__container">
+          
+          <h2 class="modal__title">¡Elije tu lado ganador!</h2>
+          <div class="apuesta" id="apuesta">
+              $<input type="text" id="apuest" placeholder="0"></input>
+          </div>
+              <input type="number" name="opc" id="opc" placeholder="numero">
+              <button  class="modal__close">
+                  CERRAR
+               </button>
+      </div>
+  </section>
+ 
+     
+   
+ 
+  <script src="modal.js"></script>
+  <script src="juego.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+
+    body{
+   background-color: #EBDDF4 ;
+   width:100%;
+   margin: 0 auto;
+   overflow: hidden;
+}
+@media (min-width: 420px) {
+    img{
+        width: 90rem;
+    }
+    
+      
+    }
+    @media (min-width: 577px) {
+        img{
+            width: 70%;
+        }
+        
+          
+        }
+        @media (min-width: 768px) {
+            img{
+                width: 70%;
+            }
+            
+              
+            }
