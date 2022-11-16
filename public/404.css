@@ -8,21 +8,33 @@
 }
 @media (min-width: 420px) {
     img{
-        width: 90rem;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        width: -webkit-fill-available;
+        margin-top: 12rem;
     }
     
       
     }
     @media (min-width: 577px) {
         img{
-            width: 70%;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            width: -webkit-fill-available;
+            margin-top: 10rem;
         }
         
           
         }
         @media (min-width: 768px) {
             img{
-                width: 70%;
+                display: flex;
+                justify-content: center;
+                justify-items: center;
+                width: -webkit-fill-available;
+                margin-top: 5rem;
             }
             
               

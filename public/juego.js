@@ -1,15 +1,13 @@
-let moneda = document.querySelector(".moneda");
+
+let bola = document.querySelector(".bola");
 let girarBtn = document.querySelector("#jugar");
 let apuesta = document.querySelector("#apuest");
 let opc = document.querySelector("#opc");
 
-let cara = 0,sello = 0,contador=0,suma=0,sumaapuesta=0;
+let contador=0,suma=0,sumaapuesta=0;
 
 function updateStats(){
 
-
-    document.querySelector("#cara-count").textContent = `cara: ${cara}`;
-    document.querySelector("#sello-count").textContent = `sello: ${sello}`;
     document.querySelector("#cant-count").textContent = `jugadas: ${contador}`;
     document.querySelector("#dinero-count").textContent = `dinero: ${suma}`;
    
@@ -26,27 +24,38 @@ girarBtn.addEventListener("click", () => {
     if(apuesta.value !='' && opc.value!=''){
 
        
-        let i = Math.floor(Math.random() * 50);
-        contador++;
+        let i = Math.floor(Math.random() * 10);
+        
 
-    moneda.style.animation = "none";
+    circulo.style.animation = "true";
     let lado=parseInt(opc.value)
     let ingreso=parseInt(apuesta.value)
     sumaapuesta+=ingreso;
    
-            moneda.style.animation = "spin-cara 2s forwards";
+        if(i){
+            circulo.style.animation = "false";
                setTimeout(function(){
         
                if(i===lado){
                    suma=ingreso*2;
-                   swal(` Que buena suerte!!, ganaste más dinero y en total es: ${suma},el resultado es: ${i}`); } 
+                   swal(` Que buena suerte!!, ganaste más dinero y en total es: ${suma},los ultimos digitos de la pelota fueron: ${i}`); } 
                else{
                    suma=ingreso-ingreso;
-                   swal(`¡Oh noo!, perdiste dinero en total tienes: ${suma}, el resultado es: ${i}`); }
+                   swal(`¡Oh noo!, perdiste dinero en total tienes: ${suma},los ultimos digitos de la pelota fueron: ${i}`); }
                    }, 3000);
-                   cara++;
-        
-  
+                   contador++;
+        }
+        else{
+           setTimeout(function(){
+               if(i===lado){
+                   suma=ingreso*2;
+                   swal(`Que buena suerte!!, ganaste más dinero y en total es: ${suma},los ultimos digitos de la pelota fueron: ${i}`); } 
+               else{
+                   suma=ingreso-ingreso;
+                   swal(`¡Oh noo!, perdiste todo tu dinero en total tienes: ${suma},los ultimos digitos de la pelota fueron: ${i}`);}
+           }, 3000);
+           contador++;
+        }
         
         setTimeout(updateStats, 3000);
         disableButton();
@@ -58,13 +67,8 @@ girarBtn.addEventListener("click", () => {
     else{
         
         swal({
-            text: 'ingresa tu apuesta y una opción para lanzar la moneda',
-            showClass: {
-              popup: 'animated bounceInDown'
-            },
-            hideClass: {
-              popup: 'animated  bounceInDown'
-            }
+            text: 'ingresa tu apuesta para parar la bola',
+            icon:'warning'
           })
     }
     
@@ -74,6 +78,11 @@ girarBtn.addEventListener("click", () => {
 
 
 
+
+
+
+
+ 
 
 
 
