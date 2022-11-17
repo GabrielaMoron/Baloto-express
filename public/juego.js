@@ -5,7 +5,6 @@ let apuesta = document.querySelector("#apuest");
 let opc = document.querySelector("#opc");
 
 let contador=0,suma=0,sumaapuesta=0;
-
 function updateStats(){
 
     document.querySelector("#cant-count").textContent = `jugadas: ${contador}`;
@@ -28,42 +27,32 @@ girarBtn.addEventListener("click", () => {
         
 
     circulo.style.animation = "true";
-    let lado=parseInt(opc.value)
+    let numero=parseInt(opc.value)
     let ingreso=parseInt(apuesta.value)
     sumaapuesta+=ingreso;
    
-        if(i){
+ 
             circulo.style.animation = "false";
+            
                setTimeout(function(){
+                if(i===numero){
+                    suma=ingreso*10;
+                    swal({text:` Que buena suerte!!, ganaste más dinero y en total es: ${suma}` , title: ` El ultimo digito de la pelota fue: ${i}`}); } 
+                else{
+                    suma=0;
+                    swal({title:`El ultimo digito de la pelota fue: ${i}`,text:`te quedaste sin dinero`});
+                  } 
+                  window.location.reload(true);
+                    }, 3000);
+                    
         
-               if(i===lado){
-                   suma=ingreso*2;
-                   swal(` Que buena suerte!!, ganaste más dinero y en total es: ${suma},los ultimos digitos de la pelota fueron: ${i}`); } 
-               else{
-                   suma=ingreso-ingreso;
-                   swal(`¡Oh noo!, perdiste dinero en total tienes: ${suma},los ultimos digitos de la pelota fueron: ${i}`); }
-                   }, 3000);
-                   contador++;
-        }
-        else{
-           setTimeout(function(){
-               if(i===lado){
-                   suma=ingreso*2;
-                   swal(`Que buena suerte!!, ganaste más dinero y en total es: ${suma},los ultimos digitos de la pelota fueron: ${i}`); } 
-               else{
-                   suma=ingreso-ingreso;
-                   swal(`¡Oh noo!, perdiste todo tu dinero en total tienes: ${suma},los ultimos digitos de la pelota fueron: ${i}`);}
-           }, 3000);
-           contador++;
-        }
+ 
         
-        setTimeout(updateStats, 3000);
-        disableButton();
       
 
+                }
+               
 
- 
-}
     else{
         
         swal({
@@ -73,6 +62,7 @@ girarBtn.addEventListener("click", () => {
     }
     
 });
+
 
 
 
